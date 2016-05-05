@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget id="com.entregapp.novo"
+<widget id="com.hudo.desconto"
         version="1.0.0"
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Entregapp V2</name>
+    <name>Hudo</name>
 
     <description>
-        Entregapp Versao Dois.
+        Hudo Versao Dois.
     </description>
 
-    <author href="http://phonegap.com" email="contato@entregapp.com.br">
-        Entregapp o aplicativo do seu jeito.
+    <author href="http://phonegap.com" email="contato@hudo.com.br">
+        Hudo o aplicativo do seu jeito.
     </author>
 
     <!--
