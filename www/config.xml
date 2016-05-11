@@ -43,7 +43,7 @@
 
     <plugin name="com.oauthio.plugins.oauthio" spec="0.2.4" source="pgb" />
 
-  <plugin name="org.apache.cordova.inappbrowser" spec="0.5.4" source="pgb" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm"  />
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <icon src="icon.png" />
     <gap:splash src="splash.png" />
