@@ -181,12 +181,12 @@ angular.module('app.controllers', [])
 
     $cordovaOauth.facebook("1765014733713634", ["email"]).then(function(result) {
          auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-             console.log(JSON.stringify(authData));
+             alert(JSON.stringify(authData));
          }, function(error) {
-             console.error("ERROR: " + error);
+             alert("ERROR: " + error);
          });
      }, function(error) {
-         console.log("ERROR: " + error);
+         alert("ERROR: " + error);
      });
 
   }
