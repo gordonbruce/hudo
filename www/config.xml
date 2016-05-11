@@ -42,7 +42,7 @@
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
 
     <plugin name="com.oauthio.plugins.oauthio" spec="0.2.4" source="pgb" />
-    
+
     <plugin name="org.apache.cordova.inappbrowser" spec="0.6.0" source="pgb" />
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <icon src="icon.png" />
