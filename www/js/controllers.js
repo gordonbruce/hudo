@@ -124,7 +124,7 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('loginCtrl', function($scope,IsAuthService,$location) {
+.controller('loginCtrl', function($scope,IsAuthService,$location, $firebaseAuth) {
   //ref.unauth();
   isLoggedIn = IsAuthService.getAuth(ref);
   if(isLoggedIn == false){
@@ -175,8 +175,9 @@ angular.module('app.controllers', [])
       }
     });
   }
+  var auth = $firebaseAuth(ref);
   $scope.loginFace = function(e) {
-    ref.authWithOAuthPopup("facebook", function(error, authData,IsAuthService,$location) {
+    /*ref.authWithOAuthPopup("facebook", function(error, authData,IsAuthService,$location) {
       if (error) {
         console.log("Login Failed!", error);
         //@TODO TRATAR ESSA EXCEÇÃO
@@ -210,7 +211,25 @@ angular.module('app.controllers', [])
 
         });
       }
+    });*/
+    OAuth.initialize('1765014733713634');
+    OAuth.popup('facebook', {
+    cache: true
+    })
+    .done(function(result) {
+      //use result.access_token in your API request
+      //or use result.get|post|put|del|patch|me methods (see below)
+      auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
+          console.log(JSON.stringify(authData));
+      }, function(error) {
+          alert("ERROR: " + error);
+      });
+    })
+    .fail(function (err) {
+      //handle error with err
+      alert('erro2');
     });
+
   }
 
 })
