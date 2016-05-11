@@ -178,13 +178,14 @@ angular.module('app.controllers', [])
   var auth = $firebaseAuth(ref);
 
   $scope.loginFace = function() {
-alert('clicou');
+
     $cordovaOauth.facebook("1765014733713634", ["email"]).then(function(result) {
-         auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
+         /*auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
              alert(JSON.stringify(authData));
          }, function(error) {
              alert("ERROR: " + error);
-         });
+         });*/
+         alert('aqui');
      }, function(error) {
          alert("ERROR: " + error);
      });
