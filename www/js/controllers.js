@@ -124,7 +124,7 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('loginCtrl', function($scope,IsAuthService,$location, $firebaseAuth) {
+.controller('loginCtrl', function($scope,IsAuthService,$location, $firebaseAuth, $cordovaOauth) {
   //ref.unauth();
   isLoggedIn = IsAuthService.getAuth(ref);
   if(isLoggedIn == false){
@@ -176,59 +176,18 @@ angular.module('app.controllers', [])
     });
   }
   var auth = $firebaseAuth(ref);
-  $scope.loginFace = function(e) {
-    ref.authWithOAuthPopup("facebook", function(error, authData,IsAuthService,$location) {
-      if (error) {
-        console.log("Login Failed!", error);
-        //@TODO TRATAR ESSA EXCEÇÃO
-      } else {
 
-        // here we will just simulate this with an isNewUser boolean
-        var isNewUser = true;
+  $scope.loginFace = function() {
 
-        ref.onAuth(function(authData) {
-          if (authData && isNewUser) {
-            // save the user's profile into the database so we can list users,
-            // use them in Security and Firebase Rules, and show profiles
-            $scope.signedUserId = authData.uid;
-            ref.child("users/"+ authData.uid ).on("value", function(hasuser) {
-               // Alerts "San Francisco"
-              if(hasuser.val() == null)
-              {
-                  ref.child("users").child(authData.uid).set({
-                    provider: authData.provider,
-                    name: getName(authData),
-                    role:'costumer',
-                    foto: authData.facebook.profileImageURL
-                  });
-
-              }
-            });
-          }
-
-          document.location.href = '#/page1/page4';
-
-
-        });
-      }
-    });
-    /*OAuth.initialize('1765014733713634');
-    OAuth.popup('facebook', {
-    cache: true
-    })
-    .done(function(result) {
-      //use result.access_token in your API request
-      //or use result.get|post|put|del|patch|me methods (see below)
-      auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-          console.log(JSON.stringify(authData));
-      }, function(error) {
-          alert("ERROR: " + error);
-      });
-    })
-    .fail(function (err) {
-      //handle error with err
-      alert('erro2');
-    });*/
+    $cordovaOauth.facebook("1765014733713634", ["email"]).then(function(result) {
+         auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
+             console.log(JSON.stringify(authData));
+         }, function(error) {
+             console.error("ERROR: " + error);
+         });
+     }, function(error) {
+         console.log("ERROR: " + error);
+     });
 
   }
 
