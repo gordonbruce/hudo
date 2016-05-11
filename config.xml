@@ -40,5 +40,6 @@
     <plugin name="io.litehelpers.cordova.sqlite" spec="0.7.10" source="pgb" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
     <plugin name="com.oauthio.plugins.oauthio" spec="0.2.4" source="pgb" />
-    <plugin name="org.apache.cordova.inappbrowser" spec="0.3.3" source="pgb" />
+    
+    <plugin name="org.apache.cordova.inappbrowser" spec="0.6.0" source="pgb" />
 </widget>
