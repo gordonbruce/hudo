@@ -40,7 +40,7 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
-    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
+  
 
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <icon src="icon.png" />
