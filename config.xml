@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget id="com.hudo.desconto"
+<widget id="com.entregapp.novo"
         version="1.0.0"
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>Hudo</name>
+    <name>Entregapp V2</name>
 
     <description>
-        Hudo Versao Dois.
+        Entregapp Versao Dois.
     </description>
 
-    <author href="http://phonegap.com" email="contato@hudo.com.br">
-        Hudo o aplicativo do seu jeito.
+    <author href="http://phonegap.com" email="contato@entregapp.com.br">
+        Entregapp o aplicativo do seu jeito.
     </author>
 
     <!--
@@ -21,8 +21,6 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-      <preference name="permissions"                value="none"/>
-      <preference name="permissions"                value="none"/>
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
@@ -40,7 +38,4 @@
     <plugin name="io.litehelpers.cordova.sqlite" spec="0.7.10" source="pgb" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
-    <feature name="http://api.phonegap.com/1.0/geolocation"/>
-    <icon src="icon.png" />
-    <gap:splash src="splash.png" />
 </widget>
