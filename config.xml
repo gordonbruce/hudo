@@ -39,8 +39,9 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
-    <gap:plugin name="com.chanthu.evri.gcs-file-transfer" spec="~1" source="npm" /> 
-    <gap:plugin name="org.apache.cordova.file" spec="~1" source="npm" />
+    <gap:plugin name="com.chanthu.evri.gcs-file-transfer" source="npm" />
+    
+    <gap:plugin name="org.apache.cordova.file"  source="npm" />
 
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <icon src="icon.png" />
