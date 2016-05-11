@@ -1,21 +1,70 @@
-<ion-view title="Signup" id="page7">
+<ion-view title="Signup" id="page7" ng-controller="signupCtrl" >
     <ion-content padding="true" class="has-header">
-        <form class="list">
+        <form class="list" >
             <ion-list>
                 <label class="item item-input">
-                    <span class="input-label">Name</span>
-                    <input type="text" placeholder="">
+                    <span class="input-label lb-email">Email</span>
+                    <input type="text" placeholder="Email" ng-blur="validaEmail(user.email)" name="email" ng-model="user.email" id="email" value="" >
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
+                    <span class="input-label lb-password">Senha</span>
+                    <input type="password" placeholder="Senha" password="password" ng-blur="difpassword(user)" ng-model="user.password" value="" id="password">
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
-                    <input type="text" placeholder="">
+                    <span class="input-label lb-password">Confirma Senha</span>
+                    <input type="password" placeholder="Confirma Senha" password="cpassword" ng-blur="difpassword(user)" ng-model="user.cpassword" value="" id="cpassword">
                 </label>
             </ion-list>
-            <button id="signup-button3" class="button button-stable  button-block">Sign up</button>
+            <div class="divAviso">
+                <span class="aviso-senha assertive" >Senhas diferentes</span>
+            </div>
+            <div class="divAvisoEmail">
+                <span class="aviso-senha assertive" >Formato de email inválido</span>
+            </div>
+            <div class="divAvisoEmailUso">
+                <span class="aviso-erro assertive" >Email em uso</span>
+            </div>
+            <button id="signup-button3" class="button button-stable  button-block" ng-click="cadastrarUsuario(user)">Cadastrar</button>
         </form>
+        <style media="screen">
+          .myredcolor
+          {
+            color: red;
+          }
+          .divAviso{
+            display: none;
+          }
+          .divAvisoEmail{
+            display: none;
+          }
+          .divAvisoEmailUso{
+            display: none;
+          }
+          .divAviso .aviso-senha{
+            text-align: center;
+            display: block;
+            margin-top: 6px;
+            width: 136px;
+            margin: 6px auto;
+            display: block;
+          }
+          .divAvisoEmail .aviso-senha{
+            text-align: center;
+            display: block;
+            margin-top: 6px;
+            width: 136px;
+            margin: 6px auto;
+            display: block;
+          }
+
+          .divAvisoEmailUso .aviso-erro{
+            text-align: center;
+            display: block;
+            margin-top: 6px;
+            width: 136px;
+            margin: 6px auto;
+            display: block;
+          }
+        </style>
     </ion-content>
 </ion-view>

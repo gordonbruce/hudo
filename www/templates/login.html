@@ -2,19 +2,39 @@
     <ion-content padding="true" class="has-header">
         <form class="list">
             <ion-list>
-                <label class="item item-input">
-                    <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
+                <label class="item item-input ">
+                    <span class="input-label  lb-password">Email</span>
+                    <input type="text" placeholder="Email" name="email" ng-model="user.email">
                 </label>
                 <label class="item item-input">
-                    <span class="input-label">Password</span>
-                    <input type="password" placeholder="">
+                    <span class="input-label  lb-password" >Senha</span>
+                    <input type="password" placeholder="Senha" name="password" ng-model="user.password">
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
-            <button id="login-button1" class="button button-stable  button-block" ng-click="loginNormal()">Entrar</button>
-            <button id="login-button1" class="button button-stable  button-block" ng-click="loginFace()">Entrar com facebook</button>
-            <a href="#" onclick="window.open('/signup', '_system', 'location=yes'); return false;" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
+            <div class="divAvisoLogin">
+                <span class="aviso-erro assertive msg-login" ></span>
+            </div>
+            <button id="login-button1" class="button button-stable  button-block" ng-click="loginNormal(user)">Entrar</button>
+            <button id="login-button1" class="button button-stable  button-block" ng-click="loginFace($event)">Entrar com Facebook</button>
+            <a href="#"  id="login-button2" class="button button-positive  button-block button-clear" ui-sref="signup" >Or create an account</a>
         </form>
+        <style media="screen">
+        .divAvisoLogin{
+          display: none;
+        }
+        .myredcolor
+        {
+          color: red;
+        }
+        .divAvisoLogin .aviso-erro{
+          text-align: center;
+          display: block;
+          margin-top: 0px;
+          width: 136px;
+          margin: 0px auto;
+          display: block;
+        }
+        </style>
     </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-<ion-view title="Cupons" id="page4" ng-controller="cuponsCtrl">
+<ion-view title="Dicas" id="page4" ng-controller="cuponsCtrl">
     <ion-content padding="true" class="has-header">
       <form class="list">
           <label class="item item-input">
@@ -6,21 +6,41 @@
               <input type="search" placeholder="Buscar" ng-model="search">
           </label>
       </form>
-      <label class="item item-select">
+    <!--  <label class="item item-select">
           <span class="input-label">Categorias</span>
           <select  ng-model="searchCategoria.Categoria.nome" >
             <option value="">Todas</option>
 
           </select>
-      </label>
-      <ion-list >
-        <ion-item class="item-thumbnail-left" ui-sref="cupons2">
-            <img src="">
-            <h2>produto</h2>
-            <p>teste</p>
-            <p><b>Categoria: </b></p>
-        </ion-item>
-      </ion-list>
+      </label>-->
+      <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="img/mcfly.jpg">
+          <h2>Marty McFly</h2>
+          <p>November 05, 1955</p>
+        </div>
+
+        <div class="item item-body">
+          <img class="full-image" src="img/delorean.jpg">
+          <h3>Dica pela internet</h3>
+          <p>
+            This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+            the content is from a card-body consisting of an image and paragraph text. The footer
+            consists of tabs, icons aligned left, within the card-footer.
+          </p>
+          <h2>R$ 100,00</h2>
+          <p>
+            <i class="icon ion-ios-flame"></i>
+            <a href="#" class="subdued">1 É Quente</a>
+            <i class="ion-ios-snowy"></i>
+            <a href="#" class="subdued">5 É fria</a>
+            <i class="ion-chatbox"></i>
+            <a href="#" class="subdued">5 Comentários</a>
+          </p>
+        </div>
+
+      </div>
     </ion-content>
 
 </ion-view>

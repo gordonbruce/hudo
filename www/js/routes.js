@@ -7,19 +7,19 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-  
 
-      .state('tabsController.categorias', {
+
+
+  .state('tabsController.addcupons', {
     url: '/page2',
     views: {
       'tab1': {
-        templateUrl: 'templates/categorias.html',
-        controller: 'categoriasCtrl'
+        templateUrl: 'templates/addcupons.html',
+        controller: 'addCuponsCtrl'
       }
     }
   })
-
+  
   .state('tabsController.empresas', {
     url: '/page3',
     views: {
@@ -80,8 +80,18 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('addanunciantes', {
+    url: '/addanunciantes',
+    templateUrl: 'templates/addanunciantes.html',
+    controller: 'addAnunciantesCtrl'
+  })
+  .state('listcupons', {
+    url: '/listcupons',
+    templateUrl: 'templates/listcupons.html',
+    controller: 'listCuponsCtrl'
+  })
 $urlRouterProvider.otherwise('/page1/page4')
 
-  
+
 
 });

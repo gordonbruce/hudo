@@ -31,6 +31,8 @@
       }
     </style>
     <script src="js/lib/jquery-1.11.1.min.js"></script>
+  
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtnzU5decrwU9ypyfVLGrfZ59k31b2aaA&signed_in=true&libraries=places&callback=initService"async defer></script>
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
@@ -67,7 +69,10 @@
                     <ion-item class="item-icon-right light item-royal" ui-sref="login" menu-close="" data-componentid="list-item1">Login
                         <i class="icon ion-pricetags"></i>
                     </ion-item>
-                    <ion-item data-componentid="list-item3" class="royal-bg light">Item</ion-item>
+                    <ion-item class="item-icon-right light item-royal" ui-sref="listcupons" menu-close="" data-componentid="list-item1">Adicionar Cupons
+                        <i class="icon ion-pricetags"></i>
+                    </ion-item>
+
                     <ion-item data-componentid="list-item4" class="royal-bg light">Item</ion-item>
                 </ion-list>
             </ion-content>

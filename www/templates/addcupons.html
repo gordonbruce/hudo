@@ -1,0 +1,51 @@
+<ion-view title="Cadastrar Cupom" id="addCupon">
+    <ion-content padding="true" class="has-header">
+      <form class="list" id="cupomForm" action="http://develop.entregapp.com.br/RestImages/uploadimage.json"  method="post" enctype="multipart/form-data" accept-charset="utf-8">
+        <label class="item item-input ">
+          <span class="input-label">Valor</span>
+          <input type="number" ng-model="cupom.valor" name="valor" placeholder="">
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Descrição</span>
+          <input type="text" placeholder="Exemplo: Desconto válido para toda a loja." ng-model="cupom.descricao" name="descricao" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Foto (opcional)</span>
+          <button type="button" name="button" id="teste" ng-click="getImage()">Imagem</button>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Telefone (opcional)</span>
+          <input type="text" placeholder="Telefone" value=""  name="telefone" ng-model="cupom.telefone" id="telefoneEmpresa">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Email (opcional)</span>
+          <input type="text" placeholder="Email" value="" name="email" ng-model="cupom.email" id="emailEmpresa">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Local</span>
+            <input type="text" placeholder="Local" name="local" ng-model="oferta.local" ng-change="getLocal(oferta.local)" id="localEmpresa">
+        </label>
+        <div class="listpre">
+          <ul ng-repeat="pred in predictions" class=""  ng-model="checked" ng-init="checked=pred.types == 'establishment' ?  true : false" >
+              <li class="item" ng-click="setLocal(pred.id)" id="{{pred.id}}" data-description="{{pred.description}}" data-nome="{{pred.terms[0].value}}" data-endereco="{{pred.terms[1].value}}"  data-bairro="{{pred.terms[2].value}}"  data-cidade="{{pred.terms[3].value}}" data-uf="{{pred.terms[4].value}}" data-pais="{{pred.terms[5].value}}" >
+                {{pred.description}}
+              </li>
+          </ul>
+        </div>
+        <button id="login-button1" class="button button-block button-ligth" ng-click="save(cupom)">Cadastrar</button>
+      </form>
+      <style>
+      .listpre{
+        position: : absolute;
+      }
+
+    </style>
+
+
+    </ion-content>
+
+    <form class="list" id="fotoForm" action="http://develop.entregapp.com.br/RestImages/uploadimage.json"  method="post" enctype="multipart/form-data" accept-charset="utf-8">
+      <input type="file"  name="foto" id="fototeste">
+    </form>
+</ion-view>
