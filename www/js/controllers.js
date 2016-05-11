@@ -177,7 +177,7 @@ angular.module('app.controllers', [])
   }
   var auth = $firebaseAuth(ref);
   $scope.loginFace = function(e) {
-    /*ref.authWithOAuthPopup("facebook", function(error, authData,IsAuthService,$location) {
+    ref.authWithOAuthPopup("facebook", function(error, authData,IsAuthService,$location) {
       if (error) {
         console.log("Login Failed!", error);
         //@TODO TRATAR ESSA EXCEÇÃO
@@ -211,8 +211,8 @@ angular.module('app.controllers', [])
 
         });
       }
-    });*/
-    OAuth.initialize('1765014733713634');
+    });
+    /*OAuth.initialize('1765014733713634');
     OAuth.popup('facebook', {
     cache: true
     })
@@ -228,7 +228,7 @@ angular.module('app.controllers', [])
     .fail(function (err) {
       //handle error with err
       alert('erro2');
-    });
+    });*/
 
   }
 
