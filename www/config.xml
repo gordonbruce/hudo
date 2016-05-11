@@ -43,7 +43,7 @@
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="com.chanthu.evri.gcs-file-transfer" spec="1.0.0" source="pgb" />
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
-    <plugin name="org.apache.cordova.camera" spec="0.3.6" source="pgb" />
+    <plugin name="org.apache.cordova.camera" spec="0.3.2" source="pgb" />
     <plugin name="org.li8.inappbrowser" spec="0.1" source="pgb" />
     <plugin name="com.oauthio.plugins.oauthio" spec="0.2.4" source="pgb" />
     <icon src="icon.png" />
