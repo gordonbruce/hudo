@@ -42,7 +42,7 @@
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
     <gap:plugin  name="cordova-plugin-inappbrowser" source="npm" />
 
-    <plugin name="com.oauthio.plugins.oauthio"  source="pgb" />
+    <plugin name="com.oauthio.plugins.oauthio"  source="npm" />
 
 
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
