@@ -37,7 +37,10 @@
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
-    <plugin name="io.litehelpers.cordova.sqlite" spec="0.7.10" source="pgb" />
-    <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
-  
+
+    <plugin name="com.chanthu.evri.gcs-file-transfer" spec="1.0.0" source="pgb" />
+    <plugin name="org.apache.cordova.file" spec="1.0.1" source="pgb" />
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <icon src="icon.png" />
+    <gap:splash src="splash.png" />
 </widget>
