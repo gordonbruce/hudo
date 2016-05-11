@@ -22,7 +22,8 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions"                value="none"/>
+    <preference name="phonegap-version" value="cli-5.2.0" />
+    
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -41,7 +42,7 @@
 
     <plugin name="com.chanthu.evri.gcs-file-transfer" spec="1.0.0" source="pgb" />
     <plugin name="org.apache.cordova.file" spec="1.0.1" source="pgb" />
-      
+
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <icon src="icon.png" />
     <gap:splash src="splash.png" />
