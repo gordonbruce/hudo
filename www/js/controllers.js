@@ -197,6 +197,26 @@ angular.module('app.controllers', [])
     });
 
   }
+  $scope.loginGoogle = function() {
+
+    Auth.$authWithOAuthRedirect("google").then(function(authData) {
+      // User successfully logged in
+
+    }).catch(function(error) {
+      if (error.code === "TRANSPORT_UNAVAILABLE") {
+        Auth.$authWithOAuthPopup("google").then(function(authData) {
+          // User successfully logged in. We can log to the console
+          // since we’re using a popup here
+
+        });
+      } else {
+        // Another error occurred
+
+
+      }
+    });
+
+  }
   Auth.$onAuth(function(authData) {
     if (authData === null) {
       //alert("Not logged in yet");
