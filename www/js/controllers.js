@@ -178,7 +178,7 @@ angular.module('app.controllers', [])
   var auth = $firebaseAuth(ref);
 
   $scope.loginFace = function() {
-    alert('teste');
+
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
       // User successfully logged in
     }).catch(function(error) {
@@ -200,7 +200,7 @@ angular.module('app.controllers', [])
       alert("Not logged in yet");
     } else {
       alert("Logged in as", authData.uid);
-      document.location.href = '#/page1/page4';
+      //document.location.href = '#/page1/page4';
     }
     $scope.authData = authData; // This will display the user's name in our view
 
