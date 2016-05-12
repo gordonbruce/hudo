@@ -178,31 +178,31 @@ angular.module('app.controllers', [])
   var auth = $firebaseAuth(ref);
 
   $scope.loginFace = function() {
-    alert(  Auth);
+
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
       // User successfully logged in
-      alert('aqui 2');
+
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
           // User successfully logged in. We can log to the console
           // since we’re using a popup here
-          alert(authData);
+
         });
       } else {
         // Another error occurred
 
-        alert(error);
+
       }
     });
 
   }
   Auth.$onAuth(function(authData) {
     if (authData === null) {
-      alert("Not logged in yet");
+      //alert("Not logged in yet");
     } else {
-      alert("Logged in as", authData.uid);
-      //document.location.href = '#/page1/page4';
+      //alert("Logged in as", authData.uid);
+      document.location.href = '#/page1/page4';
     }
     $scope.authData = authData; // This will display the user's name in our view
 
