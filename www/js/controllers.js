@@ -181,6 +181,7 @@ angular.module('app.controllers', [])
 
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
       // User successfully logged in
+      alert('aqui um');
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
