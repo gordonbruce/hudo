@@ -3,7 +3,10 @@ angular.module('app.services', [])
 .factory('CuponsFactory', [function(){
 
 }])
-
+.factory("Auth", function($firebaseAuth) {
+  var usersRef = new Firebase("https//hudo.firebaseio.com/users");
+  return $firebaseAuth(usersRef);
+})
 .service('IsAuthService', [function(){
   return {
      getAuth:  function(ref){
@@ -14,7 +17,7 @@ angular.module('app.services', [])
 
        } else
        {
-          
+
          return false;
        }
      }

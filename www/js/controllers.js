@@ -124,7 +124,7 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('loginCtrl', function($scope,IsAuthService,$location, $firebaseAuth, $cordovaOauth) {
+.controller('loginCtrl', function($scope,IsAuthService,$location, $firebaseAuth, Auth) {
   //ref.unauth();
   isLoggedIn = IsAuthService.getAuth(ref);
   if(isLoggedIn == false){
@@ -179,18 +179,32 @@ angular.module('app.controllers', [])
 
   $scope.loginFace = function() {
 
-    $cordovaOauth.facebook("1765014733713634", ["email"]).then(function(result) {
-         /*auth.$authWithOAuthToken("facebook", result.access_token).then(function(authData) {
-             alert(JSON.stringify(authData));
-         }, function(error) {
-             alert("ERROR: " + error);
-         });*/
-         alert('aqui');
-     }, function(error) {
-         alert("ERROR: " + error);
-     });
+    Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
+      // User successfully logged in
+    }).catch(function(error) {
+      if (error.code === "TRANSPORT_UNAVAILABLE") {
+        Auth.$authWithOAuthPopup("facebook").then(function(authData) {
+          // User successfully logged in. We can log to the console
+          // since we’re using a popup here
+          alert(authData);
+        });
+      } else {
+        // Another error occurred
+        alert(error);
+      }
+    });
 
   }
+  Auth.$onAuth(function(authData) {
+    if (authData === null) {
+      alert("Not logged in yet");
+    } else {
+      alert("Logged in as", authData.uid);
+      document.location.href = '#/page1/page4';
+    }
+    $scope.authData = authData; // This will display the user's name in our view
+
+  });
 
 })
 
