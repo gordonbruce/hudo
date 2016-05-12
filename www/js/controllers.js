@@ -178,10 +178,10 @@ angular.module('app.controllers', [])
   var auth = $firebaseAuth(ref);
 
   $scope.loginFace = function() {
-
+    alert('aqui um');
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
       // User successfully logged in
-      alert('aqui um');
+      alert('aqui 2');
     }).catch(function(error) {
       if (error.code === "TRANSPORT_UNAVAILABLE") {
         Auth.$authWithOAuthPopup("facebook").then(function(authData) {
@@ -191,6 +191,7 @@ angular.module('app.controllers', [])
         });
       } else {
         // Another error occurred
+
         alert(error);
       }
     });
