@@ -178,7 +178,7 @@ angular.module('app.controllers', [])
   var auth = $firebaseAuth(ref);
 
   $scope.loginFace = function() {
-
+    alert('teste');
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
       // User successfully logged in
     }).catch(function(error) {
